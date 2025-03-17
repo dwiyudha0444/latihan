@@ -8,4 +8,16 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function testDB()
+{
+    $db = \Config\Database::connect();
+
+    if ($db->connect()) {
+        echo "Berhasil terhubung ke database!";
+    } else {
+        echo "Gagal terhubung ke database!";
+    }
+}
+
 }
